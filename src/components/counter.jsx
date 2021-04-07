@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     state = {
-        count: 0,
+        value: this.props.value,
         imageUrl: 'https://picsum.photos/200',
         tags: []
 
     };
     handleIncrement = (product) =>{
         console.log(product);
-        this.setState({count: this.state.count + 1});
+        this.setState({value: this.state.value + 1});
     };
     renderTags(){
         if(this.state.tags.length === 0)
@@ -21,7 +21,7 @@ class Counter extends Component {
         
     }
     render() { 
-      
+        console.log('props',this.props);
 
         return(
          <div>
