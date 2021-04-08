@@ -7,9 +7,9 @@ class Counter extends Component {
         tags: []
 
     };
-    handleIncrement = (product) =>{
-        console.log(product);
-        this.setState({value: this.state.value + 1});
+    handleIncrement = () =>{
+        // console.log(product);
+        this.setState({count: this.state.value + 1});
     };
     renderTags(){
         if(this.state.tags.length === 0)
@@ -25,6 +25,7 @@ class Counter extends Component {
 
         return(
          <div>
+             {this.props.children}
              {this.state.tags.length === 0 && "Please create a new tag !!"}
              {this.renderTags()}
              <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
