@@ -13,6 +13,17 @@ class App extends Component{
         {id: 4, value:0}
     ]
  };
+  constructor(props) {
+    super(props);
+    console.log('App - Constructor');
+    // this.state = 
+  }
+
+  componentDidMount(){
+    // Ajax Call
+    console.log('App- Mounted');
+  }
+ 
  handleDelete = (counterId) =>{
     const counters = this.state.counters.filter(c => c.id !== counterId);
     this.setState({counters});
@@ -33,6 +44,7 @@ class App extends Component{
     this.setState({counters});
  }
  render() {
+   console.log("App - rendered");
   return (
     <div>
     <NavBar 
